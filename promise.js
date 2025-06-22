@@ -79,13 +79,43 @@ const func3 = (x) => {
 //     })
 
 
-// //await
-
+// // await 
+// Add commentMore actions
 // const handler = async () => {
-//     try{
-//         const res1 = await func1(true);
-//     }
+//   try {
+//     const res1 =await func1(true)
+//     console.log(res1)
+
+//     const res2 = await func2(true);
+//     console.log(res2)
+
+//     const res3 = await func3(true);
+//     console.log(res3);
+
+//   } catch(exception) {
+//     console.log(exception)
+//   } finally {
+//     console.log("I am last line")
+//   }
 // }
 
-func1()
+// handler()
 
+const collect = [func1(false), func2(true), func3(true)]
+
+
+// Promise.all(collect)
+// Promise.allSettled(collect)
+Promise.race(collect)
+  .then((res) => {
+    console.log(res)
+  })
+  .catch((exception) => {
+    // 
+    console.log(exception)
+  })
+
+// appl => import opert 
+
+// order information 
+// orderDetail, orderDetail
